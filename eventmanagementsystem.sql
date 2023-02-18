@@ -33,12 +33,27 @@ CREATE TABLE `Events` (
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `Customers` (
+  `customer_id` int(11) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
+  `customer_phone` int(11) NOT NULL,
+  `customer_city` varchar(255) NOT NULL,
+  `customer_country` varchar(255) NOT NULL
+ 
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Dumping data for table `Events`
 --
 
 INSERT INTO `Events` (`event_id`, `event_name`, `event_date`, `organizer_email`, `organizer_phone`, `event_description`, `event_type`, `event_location`, `event_status`, `max_seats`) VALUES
 (1001, 'Music Festival', '12-03-2023', 'musicfest@gmail.com', 022-251678, 'A weekend to indulge in warm music with amazing artists and lip-smacking food','On-Premise', 'Mumbai', 'Live', 250);
+
+
+INSERT INTO `Customers` (`customer_id`, `customer_name`, `customer_email`, `customer_phone`, `customer_city`, `customer_country`) VALUES
+(101, 'Sathish',  'sathish@gmail.com', 020-232145, 'Mysore', 'India');
 
 -- --------------------------------------------------------
 
@@ -48,9 +63,20 @@ INSERT INTO `Events` (`event_id`, `event_name`, `event_date`, `organizer_email`,
 ALTER TABLE `Events`
   ADD PRIMARY KEY (`event_id`);
 
+ALTER TABLE `Customers`
+  ADD PRIMARY KEY (`customer_id`);
 
 -- AUTO_INCREMENT for table `Events`
 --
 ALTER TABLE `Events`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  
+ALTER TABLE `Customers`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;  
+  
+  
+  
+  
+  
+  
 
